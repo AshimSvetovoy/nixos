@@ -14,23 +14,33 @@ let
 
     vendorHash = "sha256-scw2jWx636YPzJQxjHdFsrAwq2TD9cIyMftY2kS1aXQ=";
   };
+
+  # wrapper без кавычек и bash -c (ВАЖНО)
+  ytBotWrapper = pkgs.writeShellScript "yt-bot" ''
+    exec ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
+      -bot-token "$BOT_TOKEN" \
+      -api-id "$API_ID" \
+      -api-hash "$API_HASH" \
+      -admin-user-ids "$ADMIN_USER_IDS"
+  '';
+
 in
 {
-  # зависимости системы
+  # системные зависимости
   environment.systemPackages = with pkgs; [
     yt-dlp
     ffmpeg
   ];
 
   # пользователь сервиса
-users.groups.ytdlpbot = {};
+  users.groups.ytdlpbot = {};
 
-users.users.ytdlpbot = {
-  isSystemUser = true;
-  home = "/var/lib/yt-dlp-telegram-bot";
-  createHome = true;
-  group = "ytdlpbot";
-};
+  users.users.ytdlpbot = {
+    isSystemUser = true;
+    group = "ytdlpbot";
+    home = "/var/lib/yt-dlp-telegram-bot";
+    createHome = true;
+  };
 
   # systemd сервис
   systemd.services.yt-dlp-telegram-bot = {
@@ -46,18 +56,9 @@ users.users.ytdlpbot = {
       User = "ytdlpbot";
       WorkingDirectory = "/var/lib/yt-dlp-telegram-bot";
 
-      # секреты берутся из файла
       EnvironmentFile = "/var/lib/yt-dlp-telegram-bot/secrets.env";
 
-      ExecStart = ''
-        ${pkgs.bash}/bin/bash -c '
-          ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
-            -bot-token "$BOT_TOKEN" \
-            -api-id "$API_ID" \
-            -api-hash "$API_HASH" \
-            -admin-user-ids "$ADMIN_USER_IDS"
-        '
-      '';
+      ExecStart = "${ytBotWrapper}";
 
       Restart = "always";
       RestartSec = 5;
@@ -66,5 +67,4 @@ users.users.ytdlpbot = {
       PrivateTmp = true;
     };
   };
-
 }
