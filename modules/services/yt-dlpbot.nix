@@ -23,11 +23,14 @@ in
   ];
 
   # пользователь сервиса
-  users.users.ytdlpbot = {
-    isSystemUser = true;
-    home = "/var/lib/yt-dlp-telegram-bot";
-    createHome = true;
-  };
+users.groups.ytdlpbot = {};
+
+users.users.ytdlpbot = {
+  isSystemUser = true;
+  home = "/var/lib/yt-dlp-telegram-bot";
+  createHome = true;
+  group = "ytdlpbot";
+};
 
   # systemd сервис
   systemd.services.yt-dlp-telegram-bot = {
