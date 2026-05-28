@@ -15,7 +15,6 @@ let
     vendorHash = "sha256-scw2jWx636YPzJQxjHdFsrAwq2TD9cIyMftY2kS1aXQ=";
   };
 
-  # wrapper без кавычек и bash -c (ВАЖНО)
   ytBotWrapper = pkgs.writeShellScript "yt-bot" ''
     exec ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
       -bot-token "$BOT_TOKEN" \
@@ -26,23 +25,23 @@ let
 
 in
 {
-  # системные зависимости
+  # зависимости
   environment.systemPackages = with pkgs; [
     yt-dlp
     ffmpeg
   ];
 
-  # пользователь сервиса
+  # пользователь
   users.groups.ytdlpbot = {};
 
   users.users.ytdlpbot = {
     isSystemUser = true;
     group = "ytdlpbot";
     home = "/var/lib/yt-dlp-telegram-bot";
-    createHome = true;
+    createHome = false;   # ❗ systemd создаст сам
   };
 
-  # systemd сервис
+  # сервис
   systemd.services.yt-dlp-telegram-bot = {
     description = "Telegram yt-dlp bot";
 
@@ -54,6 +53,11 @@ in
       Type = "simple";
 
       User = "ytdlpbot";
+
+      # ❗ systemd сам создаёт /var/lib/yt-dlp-telegram-bot
+      StateDirectory = "yt-dlp-telegram-bot";
+      StateDirectoryMode = "0750";
+
       WorkingDirectory = "/var/lib/yt-dlp-telegram-bot";
 
       EnvironmentFile = "/var/lib/yt-dlp-telegram-bot/secrets.env";
