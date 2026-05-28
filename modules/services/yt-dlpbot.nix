@@ -9,7 +9,7 @@ let
       owner = "nonoo";
       repo = "yt-dlp-telegram-bot";
       rev = "master";
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      sha256 = "sha256-rxGyrjmRMUALTklHTiHw1JBBreTiZH4tfOOZDY+Le5U=";
     };
 
     vendorHash = "sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=";
