@@ -1,0 +1,52 @@
+{ config, pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    telegram-desktop
+    vlc
+    btop
+    fastfetch
+    xwayland-satellite
+    qbittorrent
+    steam-run
+    appimage-run
+    libreoffice-fresh
+    hunspell
+    hunspellDicts.ru_RU
+    hunspellDicts.en_US
+    pulsemixer
+    p7zip
+    tmux
+    qemu
+    python3
+    #luanti
+    obs-studio
+    amneziawg-tools
+    amneziawg-go
+    mediawriter
+    flameshot
+    qalculate-qt
+    blender
+    gimp
+    remmina
+    vscodium
+    ripgrep
+    tree
+    kdePackages.kdeconnect-kde
+    kdePackages.filelight
+    golly
+    gcc
+    zenity
+    winetricks
+    wineWow64Packages.stable
+    freerdp
+    bc
+    dialog
+    libnotify
+    faugus-launcher
+    prismlauncher
+    transmission_4-gtk
+    ryubing
+    ungoogled-chromium
+  ];
+
+}
