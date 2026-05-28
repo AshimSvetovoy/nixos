@@ -12,7 +12,7 @@ let
       sha256 = "sha256-rxGyrjmRMUALTklHTiHw1JBBreTiZH4tfOOZDY+Le5U=";
     };
 
-    vendorHash = "sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=";
+    vendorHash = "sha256-scw2jWx636YPzJQxjHdFsrAwq2TD9cIyMftY2kS1aXQ=";
   };
 in
 {
