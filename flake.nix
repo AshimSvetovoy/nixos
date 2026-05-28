@@ -35,7 +35,7 @@
           ./modules/services/copyparty.nix
           ./modules/services/firewall.nix
           ./modules/services/avahi.nix
-          ./modules/services/yt-dlpbot.nix
+          ./modules/services/pinteresttgbot.nix
           #./modules/services/clash-verge.nix
           #./modules/services/code-server.nix
           # desktop 
