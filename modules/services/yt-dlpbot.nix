@@ -16,34 +16,48 @@ let
   };
 in
 {
+  # зависимости системы
   environment.systemPackages = with pkgs; [
     yt-dlp
     ffmpeg
   ];
 
+  # пользователь сервиса
+  users.users.ytdlpbot = {
+    isSystemUser = true;
+    home = "/var/lib/yt-dlp-telegram-bot";
+    createHome = true;
+  };
+
+  # systemd сервис
   systemd.services.yt-dlp-telegram-bot = {
     description = "Telegram yt-dlp bot";
-    after = [ "network-online.target" ];
+
     wantedBy = [ "multi-user.target" ];
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
 
     serviceConfig = {
       Type = "simple";
 
+      User = "ytdlpbot";
+      WorkingDirectory = "/var/lib/yt-dlp-telegram-bot";
+
+      # секреты берутся из файла
+      EnvironmentFile = "/var/lib/yt-dlp-telegram-bot/secrets.env";
+
       ExecStart = ''
-        ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
-          -bot-token "$BOT_TOKEN" \
-          -api-id "$API_ID" \
-          -api-hash "$API_HASH" \
-          -admin-user-ids "$ADMIN_USER_IDS"
+        ${pkgs.bash}/bin/bash -c '
+          exec ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
+            -bot-token "$BOT_TOKEN" \
+            -api-id "$API_ID" \
+            -api-hash "$API_HASH" \
+            -admin-user-ids "$ADMIN_USER_IDS"
+        '
       '';
 
       Restart = "always";
       RestartSec = 5;
-
-      DynamicUser = true;
-
-      StateDirectory = "yt-dlp-telegram-bot";
-      WorkingDirectory = "/var/lib/yt-dlp-telegram-bot";
 
       NoNewPrivileges = true;
       PrivateTmp = true;
