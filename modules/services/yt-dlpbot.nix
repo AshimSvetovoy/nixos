@@ -51,7 +51,7 @@ users.users.ytdlpbot = {
 
       ExecStart = ''
         ${pkgs.bash}/bin/bash -c '
-          exec ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
+          ${ytDlpTelegramBot}/bin/yt-dlp-telegram-bot \
             -bot-token "$BOT_TOKEN" \
             -api-id "$API_ID" \
             -api-hash "$API_HASH" \
