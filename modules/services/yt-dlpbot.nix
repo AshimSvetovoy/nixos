@@ -64,12 +64,4 @@ in
     };
   };
 
-  users.groups.ytdlpbot = {};
-
-users.users.ytdlpbot = {
-  isSystemUser = true;
-  home = "/var/lib/yt-dlp-telegram-bot";
-  createHome = true;
-  group = "ytdlpbot";
-};
 }
