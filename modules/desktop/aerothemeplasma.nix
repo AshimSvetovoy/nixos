@@ -1,6 +1,6 @@
   { config, pkgs, inputs, ... }:
 {
-  #boot.plymouth.enable = true;
+  boot.plymouth.enable = true;
   services = {
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
@@ -15,12 +15,12 @@
   ];
   programs.aeroshell = {
   enable = true;
-  #fonts.segoe.enable = true;
+  fonts.segoe.enable = true;
   polkit.enable = true;
   aerothemeplasma = {
     enable = true;
     sddm.enable = true;
-    #plymouth.enable = true;
+    plymouth.enable = true;
   };
 };
 
