@@ -48,17 +48,6 @@
     transmission_4-gtk
     ryubing
     ungoogled-chromium
-    (pkgs.lutris.override {
-    buildFHSEnv = args: pkgs.buildFHSEnv (args // {
-      multiPkgs = envPkgs: let
-        originalPkgs = args.multiPkgs envPkgs;
-      in originalPkgs ++ [
-        (envPkgs.openldap.overrideAttrs {
-          doCheck = false; 
-        })
-      ];
-    });
-  })
   ];
 
 }

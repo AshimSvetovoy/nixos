@@ -50,13 +50,5 @@
   };
   fonts.fontconfig.enable = true;
 
- nixpkgs.overlays = [
-  (final: prev: {
-    openldap = prev.openldap.overrideAttrs (oldAttrs: {
-      doCheck = false;
-    });
-  })
-];
-
   system.stateVersion = "26.05";
 }
