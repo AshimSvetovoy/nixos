@@ -1,3 +1,4 @@
+# 3proxy.nix
 { config, pkgs, inputs, ... }:
 
 {

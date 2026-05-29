@@ -1,3 +1,4 @@
+# xfce.nix
   { config, pkgs, inputs, ... }:
 
 {

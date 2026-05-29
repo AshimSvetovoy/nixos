@@ -1,3 +1,4 @@
+# copyparty.nix
 { config, pkgs, inputs, ... }:
 
 {

@@ -1,3 +1,4 @@
+# minidlna.nix
 { config, pkgs, inputs, ... }:
 {
 services.minidlna = {

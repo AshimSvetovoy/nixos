@@ -1,3 +1,4 @@
+# kde.nix
   { config, pkgs, inputs, ... }:
 {
   services = {

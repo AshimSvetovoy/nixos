@@ -1,3 +1,4 @@
+# avahi.nix
 { config, pkgs, inputs, ... }:
 
 {

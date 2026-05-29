@@ -1,3 +1,4 @@
+# pinteresttgbot.nix
 { config, pkgs, inputs, ... }:
 {
   systemd.services.media-downloader-bot = let

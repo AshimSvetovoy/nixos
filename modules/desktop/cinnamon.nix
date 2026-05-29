@@ -1,3 +1,4 @@
+# cinnamon.nix
   { config, pkgs, inputs, ... }:
 
 {

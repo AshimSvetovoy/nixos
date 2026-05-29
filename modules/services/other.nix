@@ -1,3 +1,4 @@
+# other.nix
 { config, pkgs, inputs, ... }:
 
 {

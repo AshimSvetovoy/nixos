@@ -1,3 +1,4 @@
+# code-server.nix
 { config, pkgs, inputs, ... }:
 
 {

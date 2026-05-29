@@ -1,3 +1,4 @@
+# xfmaker.nix
 { config, pkgs, inputs, ... }:
 {
   xdg.portal = {

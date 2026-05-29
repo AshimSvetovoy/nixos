@@ -1,3 +1,4 @@
+# aerothemeplasma.nix
   { config, pkgs, inputs, ... }:
 {
   boot.plymouth.enable = true;

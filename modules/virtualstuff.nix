@@ -1,3 +1,4 @@
+# virtualstuff.nix
 { config, pkgs, inputs, ... }:
 {
   virtualisation.libvirtd.enable = true;
