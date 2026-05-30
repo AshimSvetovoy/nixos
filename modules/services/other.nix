@@ -15,7 +15,7 @@ services.openssh.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  #services.flatpak.enable = true;
+  services.flatpak.enable = true;
 
   services.resolved.enable = true;
     programs.throne = {

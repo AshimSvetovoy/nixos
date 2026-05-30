@@ -48,6 +48,7 @@
     transmission_4-gtk
     ryubing
     ungoogled-chromium
+    lutris-free
   ];
 
 }
