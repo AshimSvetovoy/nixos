@@ -4,8 +4,6 @@
 {
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages;
-  boot.extraModulePackages = with config.boot.kernelPackages ; [ amneziawg ] ; 
-  boot.blacklistedKernelModules = [ "af_alg" "algif_hash" "algif_skcipher" "algif_rng" "algif_aead" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

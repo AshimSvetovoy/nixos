@@ -10,7 +10,7 @@
     qbittorrent
     steam-run
     appimage-run
-    libreoffice-fresh
+    libreoffice-qt
     hunspell
     hunspellDicts.ru_RU
     hunspellDicts.en_US
@@ -20,16 +20,15 @@
     qemu
     python3
     #luanti
-    obs-studio
     amneziawg-tools
     amneziawg-go
     mediawriter
-    flameshot
+    #flameshot
     qalculate-qt
     blender
     gimp
     remmina
-    vscodium
+    vscode
     ripgrep
     tree
     kdePackages.kdeconnect-kde
@@ -49,6 +48,7 @@
     ryubing
     ungoogled-chromium
     lutris-free
+    tor-browser
   ];
 
 }

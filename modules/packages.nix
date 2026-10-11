@@ -13,7 +13,7 @@
   programs.firefox.enable = true;
   
   nixpkgs.config.allowUnfree = true;
-  # 1. Enable the legacy font directory generation for X11 applications
+
   fonts.fontDir.enable = true;
 
 
@@ -26,8 +26,8 @@ fonts.packages = with pkgs; [
   dejavu_fonts
   liberation_ttf
   freefont_ttf
-  xorg.fontmiscmisc      # The exact attribute name for the fixed/misc fonts
-  xorg.fontcursormisc    # The exact attribute name for cursor shapes
+  xorg.fontmiscmisc
+  xorg.fontcursormisc
 
 ];
 programs.steam = {
