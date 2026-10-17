@@ -28,7 +28,7 @@
           
           # services
           ./modules/services/other.nix
-          ./modules/services/minidlna.nix
+          #./modules/services/minidlna.nix
           ./modules/services/3proxy.nix
           inputs.copyparty.nixosModules.default
           ./modules/services/copyparty.nix

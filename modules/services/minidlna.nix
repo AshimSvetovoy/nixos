@@ -7,7 +7,7 @@ services.minidlna = {
   settings = {
     friendly_name = "Capybara";
     media_dir = [
-      "V,/Disk/Смешарики/Смешарики 2D вселенная"
+      "V,/home/misha/Videos"
     ];
     inotify = "yes"; # Автоматическое обновление списка файлов
   };
