@@ -26,8 +26,8 @@ fonts.packages = with pkgs; [
   dejavu_fonts
   liberation_ttf
   freefont_ttf
-  xorg.fontmiscmisc
-  xorg.fontcursormisc
+  fontmiscmisc
+  fontcursormisc
 
 ];
 programs.steam = {

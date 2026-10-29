@@ -23,7 +23,7 @@
     amneziawg-tools
     amneziawg-go
     mediawriter
-    #flameshot
+    flameshot
     qalculate-qt
     blender
     gimp
@@ -44,7 +44,6 @@
     libnotify
     faugus-launcher
     prismlauncher
-    transmission_4-gtk
     ryubing
     ungoogled-chromium
     lutris-free

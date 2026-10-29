@@ -9,14 +9,15 @@ services.displayManager.ly.enable = true;
     wayland-utils
     alacritty
     nwg-look
-    nautilus
-    noctalia-shell
-    catppuccin-gtk
+    thunar
+    waybar
+    fuzzel
+    dracula-theme
     papirus-icon-theme
     bibata-cursors
-    kdePackages.kate
     file-roller
     loupe
+    swaybg
   ];
 
   xdg.portal = {

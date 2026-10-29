@@ -3,6 +3,16 @@
 
 {
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  libXtst
+  # You may also want to add other common X11 libraries
+  # that Minecraft often needs:
+  libX11
+  libXext
+  libXrandr
+  libXcursor
+  libXi
+  ];
   
 services.openssh.enable = true;
 

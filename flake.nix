@@ -39,7 +39,7 @@
           #./modules/services/code-server.nix
 
           # desktop 
-          ./modules/desktop/kde.nix
+          ./modules/desktop/niri.nix
 
         home-manager.nixosModules.home-manager
         {home-manager.useGlobalPkgs = true;

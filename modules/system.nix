@@ -47,6 +47,17 @@
     ];
   };
   fonts.fontconfig.enable = true;
+  
+  console = {
+    enable = true;
+    # 16 ANSI-цветов в формате hex (без знака '#') на основе палитры Dracula
+    colors = [
+      "282a36" "ff5555" "50fa7b" "f1fa8c" # 0-3:   Black, Red, Green, Yellow
+      "bd93f9" "ff79c6" "8be9fd" "f8f8f2" # 4-7:   Blue, Magenta, Cyan, White
+      "6272a4" "ff5555" "50fa7b" "f1fa8c" # 8-11:  Bright Black, Bright Red, Bright Green, Bright Yellow
+      "bd93f9" "ff79c6" "8be9fd" "ffffff" # 12-15: Bright Blue, Bright Magenta, Bright Cyan, Bright White
+    ];
+  };
 
   system.stateVersion = "26.05";
 }

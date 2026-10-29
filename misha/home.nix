@@ -9,6 +9,13 @@
   home.homeDirectory = "/home/misha";
   home.stateVersion = "26.05";
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;  # Это установит $EDITOR=nvim
+    viAlias = true;        # Создаст алиас vi -> nvim
+    vimAlias = true;       # Создаст алиас vim -> nvim
+  };  
+
   programs.obs-studio = {
     enable = true;
     plugins = with pkgs.obs-studio-plugins; [
@@ -33,7 +40,7 @@
       alias warpup='sudo awg-quick up warp'
       alias warpdown='sudo awg-quick down warp'
       alias pg='ping google.com'
-      fastfetch";
+      ";
   };
 
   
