@@ -48,6 +48,7 @@
     ungoogled-chromium
     lutris-free
     tor-browser
+    mousepad
   ];
 
 }

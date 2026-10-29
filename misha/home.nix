@@ -43,6 +43,13 @@
       ";
   };
 
-  
+   home.pointerCursor = {
+    x11.enable = true;
+    name = "Bibata-Modern-Ice";       # Replace with your desired cursor theme name
+    package = pkgs.bibata-cursors; # Replace with the package providing the theme
+    size = 24;                # Adjust cursor size as needed
+    gtk.enable = true;
+  };
+ 
 
 }

@@ -47,7 +47,7 @@
     ];
   };
   fonts.fontconfig.enable = true;
-  
+
   console = {
     enable = true;
     # 16 ANSI-цветов в формате hex (без знака '#') на основе палитры Dracula
