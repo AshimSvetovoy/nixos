@@ -1,6 +1,22 @@
 # packages.nix
 { config, pkgs, ... }:
+let
+  kate-with-konsole = pkgs.symlinkJoin {
+    name = "kate-with-konsole";
+    paths = [ pkgs.kdePackages.kate ];
+
+    buildInputs = [ pkgs.makeWrapper ];
+
+    postBuild = ''
+      wrapProgram $out/bin/kate \
+        --prefix PATH : ${pkgs.lib.makeBinPath [
+          pkgs.kdePackages.konsole
+        ]}
+    '';
+  };
+in
 {
+
   home.packages = with pkgs; [
     telegram-desktop
     vlc
@@ -24,7 +40,7 @@
     amneziawg-go
     mediawriter
     flameshot
-    qalculate-qt
+    qalculate-gtk
     blender
     gimp
     remmina
@@ -49,6 +65,8 @@
     lutris-free
     tor-browser
     mousepad
+    #emacs-gtk
+    kate-with-konsole
   ];
 
 }

@@ -58,6 +58,6 @@
       "bd93f9" "ff79c6" "8be9fd" "ffffff" # 12-15: Bright Blue, Bright Magenta, Bright Cyan, Bright White
     ];
   };
-
+  home-manager.backupFileExtension = "backup";
   system.stateVersion = "26.05";
 }

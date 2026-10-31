@@ -19,7 +19,7 @@
   services.tumbler.enable = true;
   services.gvfs.enable = true;
   environment.systemPackages = with pkgs; [
-    thunar
+    nemo
     engrampa
     alacritty
     picom
@@ -33,6 +33,7 @@
     xclip
     pa_applet
     ristretto
+	dracula-theme
   ];
   xdg.portal = {
     enable = true;
