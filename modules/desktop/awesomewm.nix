@@ -9,7 +9,7 @@
   };
 
   services.displayManager.ly.enable = true;
-  services.xserver.desktopManager.xterm.enable = false;
+#  services.xserver.desktopManager.xterm.enable = false;
   services.xserver.excludePackages = [ pkgs.xterm ];
   services.tumbler.enable = true;
   services.gvfs.enable = true;
@@ -24,10 +24,10 @@
     xdg-desktop-portal 
     xdg-desktop-portal-gtk
     feh
-    gxkb
     xclip
     ristretto
-	dracula-theme
+    dracula-theme
+    pavucontrol
   ];
   xdg.portal = {
     enable = true;
