@@ -39,7 +39,7 @@
           #./modules/services/code-server.nix
 
           # desktop 
-          ./modules/desktop/i3wm.nix
+          ./modules/desktop/awesomewm.nix
 
         home-manager.nixosModules.home-manager
         {home-manager.useGlobalPkgs = true;
